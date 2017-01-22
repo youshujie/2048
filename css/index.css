@@ -48,3 +48,11 @@ a {
     border-radius: 6px;
     background-color: #ccc0b3;
 }
+.number-cell {
+    position: absolute;
+    border-radius: 6px;
+    line-height: 100px;
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+}
