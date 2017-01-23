@@ -58,7 +58,7 @@ function getNumberColor(number) {
     return number <= 4 ? "#776e65" : "#fff";
 }
 
-function noSpace() {
+function noSpace(board) {
     for (var i = 0; i < 4; i++) {
         for(var j = 0; j < 4; j++) {
             if (board[i][j] == 0) {
@@ -85,7 +85,7 @@ function canMoveLeft(board) {
 
 function canMoveRight(board) {
     for (var i = 0; i < 4; i++) {
-        for (var j = 0; j < 3; j--) {
+        for (var j = 0; j < 3; j++) {
             if (board[i][j] != 0) {
                 if (board[i][j + 1] == 0 || board[i][j + 1] == board[i][j]) {
                     return true;
@@ -138,4 +138,12 @@ function noBlockVertical(row1, row2, col, board) {
         }
     }
     return true;
+}
+
+function noMove(board) {
+    if (canMoveLeft(board) || canMoveTop(board) || canMoveRight(board) || canMoveDown(board)) {
+        return false;
+    } else {
+        return true;
+    }
 }
